@@ -14,8 +14,11 @@ repositories {
 
 dependencies {
     // asm
-    compile group: 'org.ow2.asm', name: 'asm', version: '6.2'
+    // compile group: 'org.ow2.asm', name: 'asm', version: '6.2'
+    implementation  group: 'org.ow2.asm', name: 'asm', version: '6.2'
     // cglib
-    compile files("libs/cglib-3.2.5.jar")
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    // compile files("libs/cglib-3.2.5.jar")
+    implementation  files("libs/cglib-3.2.5.jar")
+    // testCompile group: 'junit', name: 'junit', version: '4.12'
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
 }

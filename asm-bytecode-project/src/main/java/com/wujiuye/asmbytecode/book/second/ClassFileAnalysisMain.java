@@ -7,10 +7,12 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
+import java.nio.file.Files;
 
 public class ClassFileAnalysisMain {
 
-    private final static String TEXT_CLASS = "/Users/wjy/MyProjects/Java虚拟机字节码从入门到实战/bytecode-book/asm-bytecode-project/build/classes/java/main/com/wujiuye/asmbytecode/book/second/TestClass.class";
+    // private final static String TEXT_CLASS = "/Users/wjy/MyProjects/Java虚拟机字节码从入门到实战/bytecode-book/asm-bytecode-project/build/classes/java/main/com/wujiuye/asmbytecode/book/second/TestClass.class";
+    private final static String TEXT_CLASS = "asm-bytecode-project/build/classes/java/main/com/wujiuye/asmbytecode/book/second/TestClass.class";
 
     public static ByteBuffer readFile(String classFilePath) throws Exception {
         File file = new File(classFilePath);
@@ -18,15 +20,15 @@ public class ClassFileAnalysisMain {
             throw new Exception("file not exists!");
         }
         byte[] byteCodeBuf = new byte[4096];
-        int lenght;
-        try (InputStream in = new FileInputStream(file)) {
-            lenght = in.read(byteCodeBuf);
+        int length;
+        try (InputStream in = Files.newInputStream(file.toPath())) {
+            length = in.read(byteCodeBuf);
         }
-        if (lenght < 1) {
+        if (length < 1) {
             throw new Exception("not read byte code.");
         }
-        return ByteBuffer.wrap(byteCodeBuf, 0, lenght)
-                .asReadOnlyBuffer();
+        // 使用ByteBuffer而不直接使用byte缓存读取的class文件内容是因为ByteBuffer能更好的控制顺序读取。
+        return ByteBuffer.wrap(byteCodeBuf, 0, length).asReadOnlyBuffer();
     }
 
     public static void main(String[] args) throws Exception {

@@ -6,6 +6,9 @@ import com.wujiuye.asmbytecode.book.second.type.U2;
 
 import java.nio.ByteBuffer;
 
+/**
+ * 表示invokedynamic指令用到的引导方法bootstrap method以及引导方法所用到的动态调用名称、参数、返回类型
+ */
 public class CONSTANT_InvokeDynamic_info extends CpInfo {
 
     private U2 bootstrap_method_attr_index;

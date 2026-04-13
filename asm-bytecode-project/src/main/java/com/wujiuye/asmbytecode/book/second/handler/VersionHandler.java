@@ -5,6 +5,9 @@ import com.wujiuye.asmbytecode.book.second.type.U2;
 
 import java.nio.ByteBuffer;
 
+/**
+ * 解析版本号，副版本号（2）+主版本号（2）
+ */
 public class VersionHandler implements BaseByteCodeHandler {
 
     @Override

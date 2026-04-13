@@ -2,6 +2,9 @@ package com.wujiuye.asmbytecode.book.second.type;
 
 import com.wujiuye.asmbytecode.book.second.type.cp.*;
 
+/**
+ * 常量池解析类型处理的抽象父类
+ */
 public abstract class CpInfo implements ConstantInfoHandler {
 
     private U1 tag;

@@ -12,7 +12,8 @@ public class AccessFlagsHandlerTest {
 
     @Test
     public void testAccessFlagsHandlerHandler() throws Exception {
-        ByteBuffer codeBuf = ClassFileAnalysisMain.readFile("/Users/wjy/MyProjects/asm-bytecode-project/build/classes/java/main/com/wujiuye/asmbytecode/book/vmstack/RecursionAlgorithmMain.class");
+        // ByteBuffer codeBuf = ClassFileAnalysisMain.readFile("/Users/wjy/MyProjects/asm-bytecode-project/build/classes/java/main/com/wujiuye/asmbytecode/book/vmstack/RecursionAlgorithmMain.class");
+        ByteBuffer codeBuf = ClassFileAnalysisMain.readFile("build/classes/java/main/com/wujiuye/asmbytecode/book/first/RecursionAlgorithmMain.class");
         ClassFile classFile = ClassFileAnalysiser.analysis(codeBuf);
         U2 accessFlags = classFile.getAccess_flags();
         System.out.println(ClassAccessFlagUtils.toClassAccessFlagsString(accessFlags));

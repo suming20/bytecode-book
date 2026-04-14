@@ -12,7 +12,8 @@ public class InterfacesHandlerTest {
 
     @Test
     public void testInterfacesHandlerHandler() throws Exception {
-        ByteBuffer codeBuf = ClassFileAnalysisMain.readFile("/Users/wjy/MyProjects/asm-bytecode-project/build/classes/java/main/com/wujiuye/asmbytecode/book/bytecode/handler/InterfacesHandler.class");
+        // ByteBuffer codeBuf = ClassFileAnalysisMain.readFile("/Users/wjy/MyProjects/asm-bytecode-project/build/classes/java/main/com/wujiuye/asmbytecode/book/bytecode/handler/InterfacesHandler.class");
+        ByteBuffer codeBuf = ClassFileAnalysisMain.readFile("build/classes/java/main/com/wujiuye/asmbytecode/book/first/RecursionAlgorithmMain.class");
         ClassFile classFile = ClassFileAnalysiser.analysis(codeBuf);
         System.out.println("接口总数:" + classFile.getInterfaces_count().toInt());
         if (classFile.getInterfaces_count().toInt() == 0) {

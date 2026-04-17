@@ -12,7 +12,7 @@ public class ByteCodeUtils {
      * @throws IOException
      */
     public static void savaToFile(String className, byte[] byteCode) throws IOException {
-        File file = new File("/tmp/" + className + ".class");
+        File file = new File("./tmp/" + className + ".class");
         if ((!file.exists() || file.delete()) && file.createNewFile()) {
             try (FileOutputStream fos = new FileOutputStream(file)) {
                 fos.write(byteCode);
@@ -43,7 +43,7 @@ public class ByteCodeUtils {
                 return byteCode;
             }
         };
-        byteCodeClassLoader.add(className,holder);
+        byteCodeClassLoader.add(className, holder);
         return byteCodeClassLoader.loadClass(className);
     }
 

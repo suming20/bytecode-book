@@ -36,6 +36,7 @@ public class UseAsmImpInterface {
                 "println",
                 "(Ljava/lang/String;)V", false);
         mv.visitInsn(RETURN);
+        mv.visitMaxs(2, 1);
         // 获取生成的类的字节数组
         byte[] byteCode = cw.toByteArray();
         // 保存到文件

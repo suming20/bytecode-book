@@ -52,9 +52,11 @@ public class UseAsmCreateClass {
         methodVisitor.visitMethodInsn(INVOKESPECIAL,
                 "java/lang/Object",
                 "<init>", "()V", false);
+        // 添加一条返回操作指令
         methodVisitor.visitInsn(RETURN);
 
 
+        // 设置操作数栈与局部变量表的大小
         methodVisitor.visitMaxs(1, 1);
 //        methodVisitor.visitEnd();
     }
@@ -64,6 +66,7 @@ public class UseAsmCreateClass {
 //                "age", "I", null, 100);
         FieldVisitor fieldVisitor = classWriter.visitField(ACC_PRIVATE,
                 "name", "Ljava/lang/String;", null, null);
+        // 添加注解
         fieldVisitor.visitAnnotation("Llombok/Getter;", false);
 
     }

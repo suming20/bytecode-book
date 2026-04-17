@@ -15,8 +15,7 @@ public class UseAsmOverrideMethod {
 
     public static void main(String[] args) throws IOException {
         // 创建的类的类名
-        String subClassName = BaseClass.class.getName()
-                .replace("Base", "Sub");
+        String subClassName = BaseClass.class.getName().replace("Base", "Sub");
         ClassWriter cw = new ClassWriter(0);
 
         // 设置class文件结构的版本号、类名、类签名、父类、实现的接口

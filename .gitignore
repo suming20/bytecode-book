@@ -3,7 +3,7 @@
 .build
 .idea
 build
-gradle
+.gradle
 gradlew
 gradlew.bat
 
